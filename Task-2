@@ -1,0 +1,11 @@
+// Task 2: Node.js timers are non-blocking.
+// JavaScript runs on V8's main thread. Node.js uses libuv's event loop and
+// thread pool for asynchronous work, allowing the main thread to continue.
+
+console.log("Start");
+
+setTimeout(() => {
+    console.log("This message runs after the timer completes");
+}, 1000);
+
+console.log("End");
