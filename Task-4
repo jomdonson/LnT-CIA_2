@@ -1,0 +1,7 @@
+// Task 4: Calculate whole seconds remaining between two Date objects.
+
+const now = new Date();
+const target = new Date(now.getTime() + 7500);
+const remainingSeconds = Math.floor((target - now) / 1000);
+
+console.log(`Remaining seconds: ${remainingSeconds}`);
