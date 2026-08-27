@@ -1,0 +1,27 @@
+// Task 14: Countdown Timer & Notification App — Recursive Functions, Event Loop Execution Flow & EventEmitter
+
+const EventEmitter = require("events");
+
+const countdownEmitter = new EventEmitter();
+
+// Listener for timeUp event
+countdownEmitter.on("timeUp", () => {
+    console.log("Notification: Time is up!");
+});
+
+// Countdown function
+function countdown(seconds) {
+    if (seconds === 0) {
+        countdownEmitter.emit("timeUp");
+        return;
+    }
+
+    console.log("Time left:", seconds);
+
+    setTimeout(() => {
+        countdown(seconds - 1);
+    }, 1000);
+}
+
+// Start countdown
+countdown(5);
