@@ -1,0 +1,21 @@
+// Task 8: Error-first callback for checking time remaining.
+
+function checkTimeLeftCallback(seconds, callback) {
+    setTimeout(() => {
+        if (!Number.isFinite(seconds) || seconds < 0) {
+            callback(new Error("Seconds must be a non-negative number"));
+            return;
+        }
+
+        callback(null, seconds);
+    }, 100);
+}
+
+checkTimeLeftCallback(5, (error, secondsLeft) => {
+    if (error) {
+        console.error(`Error: ${error.message}`);
+        return;
+    }
+
+    console.log(`${secondsLeft} second(s) remain`);
+});
