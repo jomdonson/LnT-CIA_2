@@ -1,0 +1,2 @@
+// Task 6: This message is printed again whenever nodemon restarts the file.
+console.log(`Countdown app started at ${new Date().toLocaleTimeString()}`);
