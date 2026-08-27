@@ -1,0 +1,36 @@
+// Task 15: Countdown Timer & Notification App — Node Modules — Types, Core/Local Modules & Import-Export
+
+
+//file-1 
+
+
+
+function countdown(seconds) {
+    if (seconds === 0) {
+        console.log("Time is up!");
+        return;
+    }
+
+    console.log("Time left:", seconds);
+
+    setTimeout(() => {
+        countdown(seconds - 1);
+    }, 1000);
+}
+
+module.exports = {
+    countdown
+};
+
+
+//file-2
+
+
+
+const countdownModule = require("./countdownModule");
+
+console.log("Countdown started...");
+
+countdownModule.countdown(5);
+
+
