@@ -1,0 +1,2 @@
+// Task 1: Confirm that the countdown application is ready.
+console.log("Countdown App Ready");
