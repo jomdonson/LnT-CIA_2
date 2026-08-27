@@ -1,0 +1,18 @@
+// Task 13: Countdown Timer & Notification App — Callback Examples & the Event Loop, Job Queue
+
+console.log("Start");
+
+setTimeout(() => {
+    console.log("Timeout");
+}, 0);
+
+Promise.resolve().then(() => {
+    console.log("Promise resolved");
+});
+
+console.log("End");
+
+// Confirmation:
+// The predicted order is correct.
+// Synchronous code runs first, then Promise callbacks,
+// and finally setTimeout callbacks.
